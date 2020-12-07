@@ -16,3 +16,11 @@ We'll use a service called Heroku.
   2. and where to run it, ie determine which port:  we'll have Heroku choose since it'll choose a different port each time
   3. finally, we'll need a way to tell the server secrets in our app such as connecting to a db or private api keys, etc.
 
+
+
+https://codealong-express-deployment.herokuapp.com/
+
+nb: 
+  - if it's a long time between using your API, it may have gone to sleep and will be slow because it is starting up, just keep this in mind if it feels broken.
+  - there's a limit to how many hours/month your API can be running on Heroku
+
