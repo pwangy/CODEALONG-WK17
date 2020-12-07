@@ -1,0 +1,18 @@
+Deploying node projets
+
+In React: generally with our projects, we have a static file sitting on a server that will send what is needed to the browser. There's no logic going on.
+
+Now in deploying API:s we need a server capable of running code, taking a request, and determining what it is and what to send back to the client.
+Heaps of server services to host. For our purposes, we don't need to spend money on renting a server to host our API. 
+
+We'll use a service called Heroku.
+  it's free
+  requires very little setup
+  not quite a serverless solution. it's a nice middleground.
+
+
+:: Prepping for deployment:
+  1. server needs to know how to run our code.
+  2. and where to run it, ie determine which port:  we'll have Heroku choose since it'll choose a different port each time
+  3. finally, we'll need a way to tell the server secrets in our app such as connecting to a db or private api keys, etc.
+

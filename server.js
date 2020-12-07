@@ -1,41 +1,22 @@
-import express from "express"
+import express from 'express'
+import bodyParser from 'body-parser'
+import cors from 'cors'
 
+
+// Defines the port the app will run on. Defaults to 8080, but can be overriden when starting the server. For example: PORT-9000 npm start
+const port = process.env.PORT || 8080
 const app = express()
 
-const users = [
-  { id: 1, name: 'Boba', age: 34 },
-  { id: 2, name: 'Ivan', age: 22 },
-  { id: 3, name: 'Van', age: 24 },
-  { id: 4, name: 'Peggy', age: 21 },
-  { id: 5, name: 'Jennie', age: 42 },
-]
+// Add middlewares to enable cors and json body parsing
+app.use(cors())
+app.use(bodyParser.json())
 
-
-app.get('/', (request, response) => {
-  response.send('Hello API! Yr documentation better be good!')
+// Start defining your routes here
+app.get('/', (req, res) => {
+  res.send('Hello world, this is the codealong with Damien')
 })
 
-app.get('/users', (request, response) => {
-  response.json(users)
-})
-
-// app.get('/users/names', (request, response) => {
-//   response.json(users.names)
-//   console.log(users.names)
-// })
-
-
-app.get('/users/:id', (request, response) => {
-  // for example http://localhost:8080/users/1
-  // should print 1 in Terminal
-  // console.log(request.params.id)
-  console.log(request.params)
-  const { id } = request.params
-  const user = users.find((user) => user.id === +id)
-  response.json(user)
-})
-
-app.listen(8080, () => {
-  // the server has started, what should it do now?
-  console.log("Hello console, the server is now running.")
+// Start the server
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`)
 })
