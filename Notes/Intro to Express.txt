@@ -1,1 +1,52 @@
 Jennie - Intro to Express
+
+API:s as a layer between the frontend and backend.
+
+Useful to think of API:s as a service which
+  1. listens for requests
+  2. acts on requests (preforms logic)
+  3. returns responses to us
+
+
+:: API Routes - When creating API:s, consider:
+  How routes should be named
+  What kind of response or data is available at that route.
+
+  One standard method is:
+  REST (Representational State Transfer)
+    A way of defining API:s using routes (represents data models) and HTTP verbs (what you want to do with that data).
+
+    for example:  HTTP Method       Path
+                    GET               /users
+                    POST              /users
+                    GET               /users/123
+                    PUT               /users/123
+                    DELETE            /users/123
+      In this example, line 20 would GET all users and their information from the endpoint "/users"
+      21: we would expect to post or add a new user to the database
+      22: to get information about one specific user with the ID "123"
+      23: to update information about that same specific user
+      24: to delete this user
+
+
+:: Getting Started...
+  See screencaps for terminal commands
+
+  Then install dependencies:
+  nodemon
+  @babel/core
+  @babel/preset-env
+  @babel/node
+
+  Create or add config file: .babelrc
+
+  Create server.js file
+
+  In package.json, under "scripts", add "
+  "start": "nodemon server.js --exec babel-node"
+  "
+
+  install Express (npm i --save express)
+
+
+:: Express (a library)
