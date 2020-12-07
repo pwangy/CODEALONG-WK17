@@ -19,18 +19,20 @@ app.get('/users', (request, response) => {
   response.json(users)
 })
 
-app.get('/users/names', (request, response) => {
-  response.json(users.names)
-  console.log(users.names)
-})
+// app.get('/users/names', (request, response) => {
+//   response.json(users.names)
+//   console.log(users.names)
+// })
 
 
 app.get('/users/:id', (request, response) => {
   // for example http://localhost:8080/users/1
   // should print 1 in Terminal
   // console.log(request.params.id)
-  response.json(request.params)
-  // const { id } = request.params
+  console.log(request.params)
+  const { id } = request.params
+  const user = users.find((user) => user.id === +id)
+  response.json(user)
 })
 
 app.listen(8080, () => {
